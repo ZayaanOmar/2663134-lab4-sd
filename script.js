@@ -9,9 +9,20 @@ async function fetchInfo() {
 
     const countryName = country.value;
 
+    if (!countryName) {
+        alert("No Country Entered");
+        return;
+    }
+
     try {
         let url = `https://restcountries.com/v3.1/name/${countryName}`;
         let response = await fetch(url);
+
+        if (!response.ok) {
+            alert("Error With Country Name");
+            return;
+        }
+
         let data = await response.json();
         const countrydetails = data[0];
 
