@@ -54,6 +54,8 @@ async function fetchInfo() {
                 const borderResp = await fetch(`https://restcountries.com/v3.1/alpha?codes=${countrydetails.borders.join(',')}`);
                 const borderData = await borderResp.json();
 
+                border_list.innerHTML = ""; 
+
                 borderData.forEach(border => {
                     let li = document.createElement("li");
                     li.innerHTML = `<p>${border.name.common}</p><br>
