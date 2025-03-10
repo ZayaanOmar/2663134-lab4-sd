@@ -27,7 +27,7 @@ async function fetchInfo() {
         const countrydetails = data[0];
 
         const capital = countrydetails.capital[0];
-        const population = countrydetails.population;
+        const population = countrydetails.population.toLocaleString();
         const region = countrydetails.region;
         const flag = countrydetails.flags.svg;   
 
